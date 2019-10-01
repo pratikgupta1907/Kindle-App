@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3CC6DC234393A30038DC94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CC6DB234393A30038DC94 /* Models.swift */; };
 		7C911C07233FBFE100E6615B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C911C06233FBFE100E6615B /* AppDelegate.swift */; };
 		7C911C09233FBFE100E6615B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C911C08233FBFE100E6615B /* ViewController.swift */; };
 		7C911C0E233FBFE400E6615B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C911C0D233FBFE400E6615B /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C3CC6DB234393A30038DC94 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		7C911C03233FBFE100E6615B /* Kindle App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kindle App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C911C06233FBFE100E6615B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C911C08233FBFE100E6615B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				7C911C0D233FBFE400E6615B /* Assets.xcassets */,
 				7C911C0F233FBFE400E6615B /* LaunchScreen.storyboard */,
 				7C911C12233FBFE400E6615B /* Info.plist */,
+				7C3CC6DB234393A30038DC94 /* Models.swift */,
 			);
 			path = "Kindle App";
 			sourceTree = "<group>";
@@ -131,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3CC6DC234393A30038DC94 /* Models.swift in Sources */,
 				7C911C09233FBFE100E6615B /* ViewController.swift in Sources */,
 				7C911C07233FBFE100E6615B /* AppDelegate.swift in Sources */,
 			);
