@@ -14,11 +14,13 @@ class BookCell: UITableViewCell {
         
         let imageView = UIImageView()
        imageView.backgroundColor = .red
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let titleLabel: UILabel = {
        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.backgroundColor = .green
         label.text = "this is the text for the tile of our label inside of our cell"
@@ -28,7 +30,8 @@ class BookCell: UITableViewCell {
     let authorLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.backgroundColor = .yellow
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .blue
         label.text = "this is the author for the tile of our label of our cell"
         return label
     }()
@@ -39,9 +42,22 @@ class BookCell: UITableViewCell {
         addSubview(coverImageView)
         addSubview(titleLabel)
         addSubview(authorLabel)
-        coverImageView.frame = CGRect(x: 8, y: 8, width: 64, height: 64)
-        titleLabel.frame = CGRect(x: 82, y: 0, width: 300, height: 50)
-        authorLabel.frame = CGRect(x: 82, y: 45, width: 300, height: 50)
+        
+        coverImageView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 8).isActive = true
+        coverImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
+        coverImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        coverImageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        
+        titleLabel.leftAnchor.constraint(equalTo: coverImageView.rightAnchor, constant: 8).isActive = true
+        titleLabel.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -8).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        authorLabel.leftAnchor.constraint(equalTo: coverImageView.rightAnchor, constant: 8).isActive = true
+        authorLabel.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -8).isActive = true
+        authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0).isActive = true
+        authorLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
     }
     
     required init?(coder aDecoder: NSCoder) {
