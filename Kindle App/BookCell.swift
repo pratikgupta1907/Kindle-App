@@ -13,8 +13,8 @@ class BookCell: UITableViewCell {
     let coverImageView: UIImageView = {
         
         let imageView = UIImageView()
-       imageView.backgroundColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = #imageLiteral(resourceName: "5")
         return imageView
     }()
     
@@ -22,7 +22,6 @@ class BookCell: UITableViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.backgroundColor = .green
         label.text = "this is the text for the tile of our label inside of our cell"
         return label
     }()
@@ -31,7 +30,6 @@ class BookCell: UITableViewCell {
         let label = UILabel()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .blue
         label.text = "this is the author for the tile of our label of our cell"
         return label
     }()
@@ -50,13 +48,13 @@ class BookCell: UITableViewCell {
         
         titleLabel.leftAnchor.constraint(equalTo: coverImageView.rightAnchor, constant: 8).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -8).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        titleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
         
         authorLabel.leftAnchor.constraint(equalTo: coverImageView.rightAnchor, constant: 8).isActive = true
         authorLabel.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -8).isActive = true
-        authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 0).isActive = true
-        authorLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
+        authorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
 
     }
     
