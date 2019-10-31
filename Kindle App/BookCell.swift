@@ -10,15 +10,23 @@ import UIKit
 
 class BookCell: UITableViewCell {
     
-    let coverImageView: UIImageView = {
+    var book: Book? {
+        didSet {
+            coverImageView.image = book?.image
+            titleLabel.text = book?.title
+            authorLabel.text = book?.author
+        }
+    }
+    
+   private let coverImageView: UIImageView = {
         
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = #imageLiteral(resourceName: "5")
+        imageView.image = #imageLiteral(resourceName: "steve_jobs")
         return imageView
     }()
     
-    let titleLabel: UILabel = {
+   private let titleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -26,7 +34,7 @@ class BookCell: UITableViewCell {
         return label
     }()
     
-    let authorLabel: UILabel = {
+   private let authorLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
