@@ -12,7 +12,7 @@ class BookCell: UITableViewCell {
     
     var book: Book? {
         didSet {
-            coverImageView.image = book?.image
+            //coverImageView.image = book?.coverImageUrl
             titleLabel.text = book?.title
             authorLabel.text = book?.author
         }

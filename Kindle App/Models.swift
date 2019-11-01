@@ -8,30 +8,15 @@
 
 import UIKit
 
-class Book {
-    
+struct Book: Decodable {
+    let id: Int
     let title: String
     let author: String
-    let pages: [Page]
-    let image: UIImage
-    
-    init(title: String, author: String, pages: [Page], image: UIImage) {
-        self.title = title
-        self.author = author
-        self.pages = pages
-        self.image = image
-    }
+    let coverImageUrl: String
+    var pages: [Page]?
 }
 
-class Page {
-    
-    let number: Int
+struct Page: Decodable {
+    let id: Int
     let text: String
-    
-    init(number: Int, text: String) {
-        self.number = number
-        self.text = text
-    }
-    
 }
-

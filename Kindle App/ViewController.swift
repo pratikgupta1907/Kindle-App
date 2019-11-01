@@ -17,22 +17,34 @@ class ViewController: UITableViewController {
         navigationItem.title = "Kindle"
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
-        setUpBooks()
-        fetchBooks()
+        fetchJSON()
     }
     
-    func fetchBooks() {
-        let url = URL(string: "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json")
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-            
-            if let err = error {
-                print("Failed to fetch external books:", err)
+    func fetchJSON() {
+        let urlString = "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json"
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, err) in
+            if let err = err {
+                print("Failed to fetch data from", err)
+                return
             }
+            
             guard let data = data else { return }
-           let dataAsString = String(data: data, encoding: .utf8)
-            print(dataAsString!)
-        }.resume()
-        print("have we fetch out books yet")
+            
+            do {
+                let decoder = JSONDecoder()
+                let books = try decoder.decode([Book].self, from: data)
+                self.books = books
+                DispatchQueue.main.async(execute: { () -> Void in
+                    self.tableView?.reloadData()
+                })
+                books.forEach({print($0.title)})
+            } catch let jsonErr {
+                print("Failed to parse json:", jsonErr)
+            }
+            
+            }.resume()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,27 +80,6 @@ class ViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func setUpBooks() {
-        let page1 = Page(number: 1, text: "text for the first page")
-        let page2 = Page(number: 2, text: "text for the second page")
-        
-        let book = Book(title: "Steve Jobs", author: "Walter Isaac", pages: [page1, page2], image: #imageLiteral(resourceName: "steve_jobs"))
-        
-        let book2 = Book(title: "Bill Gates", author: "michael B", pages: [
-            Page(number: 1, text: "text for the first page"),
-            Page(number: 2, text: "text for the second page"),
-            Page(number: 3, text: "text for the third page"),
-            Page(number: 4, text: "text for the fourth page")
-            ], image: #imageLiteral(resourceName: "bill_gates"))
-        
-        let book3 = Book(title: "Amazon", author: "jeff B", pages: [
-            Page(number: 1, text: "text for the first page"),
-            Page(number: 2, text: "text for the second page"),
-            Page(number: 3, text: "text for the third page"),
-            Page(number: 4, text: "text for the fourth page")
-            ], image: #imageLiteral(resourceName: "amazon_icon-2"))
-        
-        self.books = [book, book2, book3]
-    }
+   
 }
 

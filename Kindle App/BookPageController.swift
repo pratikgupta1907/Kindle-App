@@ -33,13 +33,13 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return book?.pages.count ?? 0
+        return book?.pages?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let pageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! PageCell
         
-        let page = book?.pages[indexPath.row]
+        let page = book?.pages?[indexPath.row]
         pageCell.textLabel.text = page?.text
         
         return pageCell
