@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BookCell: UITableViewCell {
     
     var book: Book? {
         didSet {
-            //coverImageView.image = book?.coverImageUrl
+            let url = URL.init(string: book?.coverImageUrl ?? "")
+            self.coverImageView.sd_setImage(with: url)
             titleLabel.text = book?.title
             authorLabel.text = book?.author
         }

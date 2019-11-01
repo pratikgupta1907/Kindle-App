@@ -39,7 +39,6 @@ class ViewController: UITableViewController {
                 DispatchQueue.main.async(execute: { () -> Void in
                     self.tableView?.reloadData()
                 })
-                books.forEach({print($0.title)})
             } catch let jsonErr {
                 print("Failed to parse json:", jsonErr)
             }

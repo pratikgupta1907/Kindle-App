@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5825EC30426109F7F047EB73 /* Pods_Kindle_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B3280AE0ACDA890B99D8A1 /* Pods_Kindle_App.framework */; };
 		7C3CC6DC234393A30038DC94 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3CC6DB234393A30038DC94 /* Models.swift */; };
 		7C7EBC792369CBB6000FBC25 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EBC782369CBB6000FBC25 /* BookCell.swift */; };
 		7C7EBC7B236AA86D000FBC25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C7EBC7A236AA86D000FBC25 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BD96BE76759969A6DE1D953 /* Pods-Kindle App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kindle App.debug.xcconfig"; path = "Target Support Files/Pods-Kindle App/Pods-Kindle App.debug.xcconfig"; sourceTree = "<group>"; };
 		7C3CC6DB234393A30038DC94 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		7C7EBC782369CBB6000FBC25 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		7C7EBC7A236AA86D000FBC25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		7C911C10233FBFE400E6615B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C911C12233FBFE400E6615B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CEE5B1F236AC9540054AEF6 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		E460A30E3679B5F007F60E53 /* Pods-Kindle App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kindle App.release.xcconfig"; path = "Target Support Files/Pods-Kindle App/Pods-Kindle App.release.xcconfig"; sourceTree = "<group>"; };
+		E5B3280AE0ACDA890B99D8A1 /* Pods_Kindle_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kindle_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5825EC30426109F7F047EB73 /* Pods_Kindle_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				7C911C05233FBFE100E6615B /* Kindle App */,
 				7C911C04233FBFE100E6615B /* Products */,
+				E5F91367DA882C1BD116232E /* Pods */,
+				B3952D0A8050FC1D3D251909 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +80,24 @@
 			path = "Kindle App";
 			sourceTree = "<group>";
 		};
+		B3952D0A8050FC1D3D251909 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5B3280AE0ACDA890B99D8A1 /* Pods_Kindle_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E5F91367DA882C1BD116232E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BD96BE76759969A6DE1D953 /* Pods-Kindle App.debug.xcconfig */,
+				E460A30E3679B5F007F60E53 /* Pods-Kindle App.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7C911C15233FBFE400E6615B /* Build configuration list for PBXNativeTarget "Kindle App" */;
 			buildPhases = (
+				4BF27BC6B50F4233A1194D3D /* [CP] Check Pods Manifest.lock */,
 				7C911BFF233FBFE100E6615B /* Sources */,
 				7C911C00233FBFE100E6615B /* Frameworks */,
 				7C911C01233FBFE100E6615B /* Resources */,
+				2FED485069138B3688A843C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +164,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FED485069138B3688A843C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kindle App/Pods-Kindle App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kindle App/Pods-Kindle App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kindle App/Pods-Kindle App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BF27BC6B50F4233A1194D3D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kindle App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7C911BFF233FBFE100E6615B /* Sources */ = {
@@ -284,6 +353,7 @@
 		};
 		7C911C16233FBFE400E6615B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD96BE76759969A6DE1D953 /* Pods-Kindle App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +373,7 @@
 		};
 		7C911C17233FBFE400E6615B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E460A30E3679B5F007F60E53 /* Pods-Kindle App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
