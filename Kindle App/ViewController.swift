@@ -15,14 +15,32 @@ class ViewController: UITableViewController, SkeletonTableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavigationBarStyles()
+        setUpNavigationBarButton()
         navigationItem.title = "Kindle"
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
         tableView.isSkeletonable = true
-        fetchJSON()
+        fetchBooks()
+        
     }
     
-    func fetchJSON() {
+    func setUpNavigationBarButton() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu-2"), style: .plain, target: self, action: #selector(handleMenuPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "amazon_icon-2"), style: .plain, target: self, action: #selector(handleMenuPressed))
+
+    }
+    
+    @objc func handleMenuPressed() {
+        print("menu pressed")
+    }
+    func setUpNavigationBarStyles() {
+        navigationController?.navigationBar.barTintColor = UIColor(hue: 40/255, saturation: 40/255, brightness: 40/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    func fetchBooks() {
         let urlString = "https://letsbuildthatapp-videos.s3-us-west-2.amazonaws.com/kindle.json"
         guard let url = URL(string: urlString) else { return }
         
