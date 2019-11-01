@@ -14,9 +14,12 @@ class BookCell: UITableViewCell {
     var book: Book? {
         didSet {
             let url = URL.init(string: book?.coverImageUrl ?? "")
-            self.coverImageView.sd_setImage(with: url)
+            DispatchQueue.main.async {
+                self.coverImageView.sd_setImage(with: url)
+            }
             titleLabel.text = book?.title
             authorLabel.text = book?.author
+           
         }
     }
     
@@ -24,7 +27,6 @@ class BookCell: UITableViewCell {
         
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = #imageLiteral(resourceName: "steve_jobs")
         return imageView
     }()
     
@@ -65,7 +67,8 @@ class BookCell: UITableViewCell {
         authorLabel.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -8).isActive = true
         authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
         authorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
-
+        
+       
     }
     
     required init?(coder aDecoder: NSCoder) {

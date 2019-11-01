@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SkeletonView
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, SkeletonTableViewDataSource {
     
     var books: [Book]?
 
@@ -17,6 +18,7 @@ class ViewController: UITableViewController {
         navigationItem.title = "Kindle"
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         tableView.tableFooterView = UIView()
+        tableView.isSkeletonable = true
         fetchJSON()
     }
     
@@ -57,7 +59,6 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! BookCell
-        
         let book = books?[indexPath.row]
         cell.book = book
         return cell
@@ -79,6 +80,9 @@ class ViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "cellId"
+    }
    
 }
 
