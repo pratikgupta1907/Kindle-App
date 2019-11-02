@@ -53,6 +53,7 @@ class BookCell: UITableViewCell {
         addSubview(titleLabel)
         addSubview(authorLabel)
         
+        backgroundColor = .clear
         coverImageView.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 8).isActive = true
         coverImageView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
         coverImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true

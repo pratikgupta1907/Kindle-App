@@ -14,6 +14,7 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavigationBarStyles()
         collectionView.backgroundColor = .white
         navigationItem.title = book?.title
         // .self will going to give class type cell
@@ -25,7 +26,16 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
         
         collectionView.isPagingEnabled = true
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(handleCloseBook))
+        let leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(handleCloseBook))
+        leftBarButtonItem.tintColor = .white
+        
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+    }
+    
+    func setUpNavigationBarStyles() {
+        navigationController?.navigationBar.barTintColor = UIColor(hue: 40/255, saturation: 40/255, brightness: 40/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     @objc func handleCloseBook() {
@@ -48,4 +58,5 @@ class BookPageController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height - view.frame.width / 3)
     }
+    
 }
