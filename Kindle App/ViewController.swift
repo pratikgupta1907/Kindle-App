@@ -20,7 +20,8 @@ class ViewController: UITableViewController {
         navigationItem.title = "Kindle"
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellId")
         tableView.isSkeletonable = true
-        tableView.backgroundColor = .lightGray
+        tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
+        tableView.separatorColor = UIColor(white: 1, alpha: 0.2)
         tableView.tableFooterView = UIView()
         fetchBooks()
     }

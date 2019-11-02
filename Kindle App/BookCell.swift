@@ -33,6 +33,7 @@ class BookCell: UITableViewCell {
    private let titleLabel: UILabel = {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+    label.textColor = .white
         label.numberOfLines = 0
         label.text = "this is the text for the tile of our label inside of our cell"
         return label
@@ -40,6 +41,8 @@ class BookCell: UITableViewCell {
     
    private let authorLabel: UILabel = {
         let label = UILabel()
+    label.textColor = .lightGray
+    label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "this is the author for the tile of our label of our cell"
