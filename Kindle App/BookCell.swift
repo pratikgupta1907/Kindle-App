@@ -19,30 +19,29 @@ class BookCell: UITableViewCell {
             }
             titleLabel.text = book?.title
             authorLabel.text = book?.author
-           
+            
         }
     }
     
-   private let coverImageView: UIImageView = {
-        
+    private let coverImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-   private let titleLabel: UILabel = {
-       let label = UILabel()
+    private let titleLabel: UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-    label.textColor = .white
+        label.textColor = .white
         label.numberOfLines = 0
         label.text = "this is the text for the tile of our label inside of our cell"
         return label
     }()
     
-   private let authorLabel: UILabel = {
+    private let authorLabel: UILabel = {
         let label = UILabel()
-    label.textColor = .lightGray
-    label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textColor = .lightGray
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "this is the author for the tile of our label of our cell"
@@ -72,7 +71,7 @@ class BookCell: UITableViewCell {
         authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4).isActive = true
         authorLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-       
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

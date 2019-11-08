@@ -10,9 +10,9 @@ import UIKit
 import SkeletonView
 
 class ViewController: UITableViewController {
-
+    
     var books: [Book]?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBarStyles()
@@ -23,18 +23,22 @@ class ViewController: UITableViewController {
         tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
         tableView.separatorColor = UIColor(white: 1, alpha: 0.2)
         tableView.tableFooterView = UIView()
+        tableView.contentInsetAdjustmentBehavior = .never
         fetchBooks()
     }
+    
     
     func setUpNavigationBarButton() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "menu-2"), style: .plain, target: self, action: #selector(handleMenuPressed))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "amazon_icon-2"), style: .plain, target: self, action: #selector(handleMenuPressed))
-
+        
     }
     
-    @objc func handleMenuPressed() {
+    @objc
+    func handleMenuPressed() {
         print("menu pressed")
     }
+    
     func setUpNavigationBarStyles() {
         navigationController?.navigationBar.barTintColor = UIColor(hue: 40/255, saturation: 40/255, brightness: 40/255, alpha: 1)
         navigationController?.navigationBar.isTranslucent = false
@@ -74,7 +78,7 @@ class ViewController: UITableViewController {
         }
         return 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! BookCell
@@ -118,7 +122,7 @@ class ViewController: UITableViewController {
         gridButton.setImage(#imageLiteral(resourceName: "grid"), for: .normal)
         gridButton.translatesAutoresizingMaskIntoConstraints = false
         footerView.addSubview(gridButton)
-
+        
         
         gridButton.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: 10).isActive = true
         gridButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
@@ -140,8 +144,8 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50
+        return 90
     }
-   
+    
 }
 
