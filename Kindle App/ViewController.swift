@@ -23,6 +23,7 @@ class ViewController: UITableViewController {
         tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
         tableView.separatorColor = UIColor(white: 1, alpha: 0.2)
         tableView.tableFooterView = UIView()
+        tableView.showsVerticalScrollIndicator = false
         tableView.contentInsetAdjustmentBehavior = .never
         fetchBooks()
     }
